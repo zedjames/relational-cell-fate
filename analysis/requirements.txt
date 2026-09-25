@@ -1,0 +1,2 @@
+# Core release verification uses only the Python standard library.
+# Figure regeneration requirements will be frozen before the DOI-backed release.
