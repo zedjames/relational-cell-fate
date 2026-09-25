@@ -103,8 +103,12 @@ def main() -> None:
     require((int(k1["classCount"]), int(k1["largestClass"]), int(k1["stableLineageCount"])) == (31, 128, 1550),
             "Watermelon k=1 persistence geometry")
     checks += 1
-    max_nonempty = max(int(r["supportLevel"]) for r in support if int(r["edgeCount"]) > 0)
-    require(max_nonempty == 110, "Watermelon maximum nonself support")
+    # The critical-level table records only thresholds where the partition changes.
+    # Its identity endpoint is k=111, so the final nonself relation persists through k=110.
+    identity_endpoint = max(int(r["supportLevel"]) for r in support)
+    endpoint_row = next(r for r in support if int(r["supportLevel"]) == identity_endpoint)
+    require(identity_endpoint == 111 and int(endpoint_row["edgeCount"]) == 0,
+            "Watermelon identity endpoint")
     checks += 1
 
     # Cross-replicate transport authority at deepest ordered history.
