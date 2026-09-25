@@ -1,4 +1,5 @@
 name: Verify frozen paper results
+# Paper-specific public reproducibility check
 
 on:
   push:
