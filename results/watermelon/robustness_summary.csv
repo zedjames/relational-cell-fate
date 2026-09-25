@@ -1,0 +1,11 @@
+analysis,metric,observed,null_2_5pct,null_median,null_97_5pct,corrected_upper_tail
+count_qualified_support,min_cells_1,0.0709677419355,,,, 
+count_qualified_support,min_cells_2,0.0458715596330,,,, 
+count_qualified_support,min_cells_3,0.0354223433243,,,, 
+count_qualified_support,min_cells_5,0.0337078651685,,,, 
+sampling_depth_conditioned,class_resolution_area,108.142105263158,107.810526315789,107.931578947368,108.063157894737,0.003996003996004
+sampling_depth_conditioned,pair_discrimination_area,110.418267891952,110.305370370370,110.359509885826,110.413014480646,0.018981018981019
+sampling_depth_conditioned,lineage_persistence_area,74.7987096774194,72.7713548387097,73.8219354838710,74.8652903225806,0.035964035964036
+coarse_four_part_fate,class_resolution_area,81.0,71.465,73.3333333333333,75.2666666666667,0.000999000999001
+coarse_four_part_fate,pair_discrimination_area,94.1904761904762,85.2476190476191,86.8952380952381,88.5716666666667,0.000999000999001
+coarse_four_part_fate,lineage_persistence_area,86.9096774193548,83.0840806451613,84.4961290322581,85.8922741935484,0.000999000999001
