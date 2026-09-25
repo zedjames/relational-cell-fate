@@ -1,0 +1,9 @@
+source_id	system	role	public_accession_or_repo	publication_doi	upstream_commit	notes
+resistrace	ReSisTrace ovarian cancer	sister-linked RNA	GSE223003	10.1038/s41467-024-45478-7		Public GEO authority
+rewind	Rewind melanoma resistance	Carbon Copy / RNA-FISH	GSE161299	10.1038/s41587-021-00837-3		Public GEO authority
+watermelon	Watermelon PC9 osimertinib	lineage + scRNA-seq	GSE150949	10.1038/s41586-021-03796-6		Public GEO authority
+celltag_lsk_rna	CellTag-multi LSK hematopoiesis	scRNA-seq	GSE216606	10.1038/s41587-023-01931-4	5fd3778bd3b056239b04a583ebf5911242c5f4ed	Upstream source repo: morris-lab/CellTag-multi-2023
+celltag_lsk_atac	CellTag-multi LSK hematopoiesis	scATAC-seq	GSE216506	10.1038/s41587-023-01931-4	5fd3778bd3b056239b04a583ebf5911242c5f4ed	Clone-level orthogonal modality
+celltag_iep_rna	CellTag-multi iEP reprogramming	scRNA-seq	GSE216518	10.1038/s41587-023-01931-4	5fd3778bd3b056239b04a583ebf5911242c5f4ed	Days 3, 12, 21
+celltag_iep_atac	CellTag-multi iEP reprogramming	scATAC-seq	GSE217119	10.1038/s41587-023-01931-4	5fd3778bd3b056239b04a583ebf5911242c5f4ed	Days 3, 12, 21
+fgf2_cml	FGF2 / imatinib CML	measurement-authority boundary	publication	10.1182/blood-2013-07-518381		Used as authority boundary rather than lineage carrier
