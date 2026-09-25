@@ -1,0 +1,16 @@
+package,decision_eligible,cell_count,partition_size,pure_fiber_count,mixed_fiber_count,cells_in_mixed_fibers,maximum_fate_image_cardinality,majority_residual,exact_recovery
+P0_primedConstant,True,162,1,0,1,162,2,77,False
+P1_AXL,True,162,2,0,2,162,2,53,False
+P1_EGFR,True,162,2,0,2,162,2,73,False
+P1_NGFR,True,162,3,1,2,156,2,74,False
+P1_WNT5A,True,162,3,1,2,161,2,76,False
+P1_MMP1,True,162,2,0,2,162,2,60,False
+P1_ITGA3,True,162,3,0,3,162,2,52,False
+P1_FN1,True,162,3,0,3,162,2,73,False
+P1_SOX10,True,162,3,0,3,162,2,66,False
+P1_MITF,True,162,3,0,3,162,2,72,False
+P2_nineGeneFateBlindVector,True,162,86,71,15,63,2,18,False
+P3_fateBlindBurden,True,162,21,8,13,147,2,55,False
+P4_sourceHighlightedProgram,False,162,21,8,13,147,2,55,False
+P5_richPrecursorQuotient,True,162,34,27,7,126,2,52,False
+identity_cellID,False,162,162,162,0,0,1,0,True
