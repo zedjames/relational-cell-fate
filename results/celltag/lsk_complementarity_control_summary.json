@@ -1,0 +1,17 @@
+{
+  "atacA2ArmInvariantObservedExactRecovery": true,
+  "atacA2ArmInvariantRandomExactRecoveryTail": 0.11764705882352941,
+  "complementarityDecision": "multimodalGainConsistentWithDimensionality",
+  "countSensitivityRobust": false,
+  "fiberMatchedPlusOneLowerTail": 1.0,
+  "improvesBothModalities": true,
+  "majorityJ2FiberExactRecoveryTail": 0.14785992217898833,
+  "majorityJ2ObservedExactRecovery": true,
+  "majorityJ2RandomJointExactRecoveryTail": 0.8823529411764706,
+  "majorityJ2ShamExactRecoveryTail": 0.48638132295719844,
+  "observedSameCloneGain": 32,
+  "randomATACBankPlusOneLowerTail": 0.9411764705882353,
+  "randomJointBankPlusOneLowerTail": 1.0,
+  "randomRNABankPlusOneLowerTail": 0.9411764705882353,
+  "shamJoinPlusOneUpperTail": 0.9961089494163424
+}
