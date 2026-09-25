@@ -1,0 +1,7 @@
+support_level,lane,common_state_count
+38,conditioned,6
+38,cycle_reduced,1
+62,conditioned,190
+62,cycle_reduced,170
+110,conditioned,190
+110,cycle_reduced,170
