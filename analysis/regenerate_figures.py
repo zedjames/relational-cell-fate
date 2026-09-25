@@ -39,7 +39,7 @@ def fig2_resistrace():
         r for r in read_csv("results/resistrace/recovery_matrix.csv")
         if r["package"] == "P5b_correctedBiologicalState" and r["decision_eligible"] == "True"
     ]
-    conditions = ["carboplatin", "control", "NK_challenge", "olaparib"]
+    conditions = ["carboplatin", "control", "nk", "olaparib"]
     labels = ["Carboplatin", "Control", "NK challenge", "Olaparib"]
     matrix = np.zeros((4, 2))
     mixed = np.zeros((4, 2), dtype=int)
@@ -47,7 +47,8 @@ def fig2_resistrace():
     for row in rows:
         i = conditions.index(row["condition"])
         j = int(row["replicate"]) - 1
-        matrix[i, j] = int(row["majority_residual"]) / int(row["unresolved_cell_count"])
+        carrier = int(row["resolved_cell_count"]) + int(row["unresolved_cell_count"])
+        matrix[i, j] = int(row["majority_residual"]) / carrier
         mixed[i, j] = int(row["fate_mixed_fiber_count"])
         fibers[i, j] = int(row["fiber_count"])
 
