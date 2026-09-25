@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use these reproducibility materials, please cite the accompanying manuscript."
+title: "Relational Anatomy of Cell Fate Across Lineage-Resolved Perturbation Experiments"
+type: dataset
+authors:
+  - family-names: James
+    given-names: Zed
+repository-code: "https://github.com/zedjames/relational-cell-fate"
+license: "NOASSERTION"
+version: "pre-release"
+date-released: "2026-09-25"
+abstract: "Paper-specific reproducibility materials for lineage-resolved state-fate analyses across cancer resistance, hematopoiesis, and cellular reprogramming."
