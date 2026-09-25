@@ -1,0 +1,4 @@
+system,familyCount,surfaceCount,bestFateSelectiveSurplus,bestAmbiguityRatio,sharedExactStateExists,fingerprintOnlyExactnessExists,registeredStateNonrecoveryExists,qualifiedPositiveSurplus,controlQualification
+CellTag_LSK_hematopoiesis,11,100,0.0212772206956,0.0,True,True,True,False,familywise
+CellTag_iEP_reprogramming,24,640,0.0231969626896,0.0,True,True,True,True,familywise
+Watermelon_PC9_osimertinib,19,109,0.0568107084731,0.0,True,True,True,True,familywise
