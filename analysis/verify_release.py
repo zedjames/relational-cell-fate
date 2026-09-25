@@ -111,6 +111,81 @@ def main() -> None:
             "Watermelon identity endpoint")
     checks += 1
 
+    # Independent CellTag LSK state/future geometry.
+    lsk = rows("results/celltag/lsk_state_fate_recovery.csv")
+    lsk_p5 = next(r for r in lsk if r["package"] == "P5" and r["endpoint"] == "finePooled")
+    require((int(lsk_p5["cloneCount"]), int(lsk_p5["partitionSize"]),
+             int(lsk_p5["mixedFibers"]), int(lsk_p5["discordantPairCount"])) ==
+            (1453, 1065, 168, 2564) and not as_bool(lsk_p5["recovers"]),
+            "CellTag LSK rich-RNA nonrecovery geometry")
+    checks += 1
+
+    lsk_rna = rows("results/celltag/lsk_rna_recovery.csv")
+    lsk_atac = rows("results/celltag/lsk_atac_recovery.csv")
+    lsk_joint = rows("results/celltag/lsk_joint_recovery.csv")
+    rna5 = next(r for r in lsk_rna if r["package"] == "P5" and r["endpoint"] == "finePooled")
+    atac5 = next(r for r in lsk_atac if r["package"] == "A5" and r["endpoint"] == "finePooled")
+    joint5 = next(r for r in lsk_joint if r["package"] == "J5" and r["endpoint"] == "finePooled")
+    require((int(rna5["partitionSize"]), int(rna5["discordantPairCount"])) == (184, 32),
+            "CellTag LSK RNA fine-fate collisions")
+    checks += 1
+    require((int(atac5["partitionSize"]), int(atac5["discordantPairCount"])) == (195, 11),
+            "CellTag LSK ATAC fine-fate collisions")
+    checks += 1
+    require((int(joint5["cloneCount"]), int(joint5["partitionSize"]),
+             int(joint5["discordantPairCount"])) == (201, 201, 0)
+            and as_bool(joint5["recovers"]) and as_bool(joint5["stateInjective"]),
+            "CellTag LSK joint-state fingerprint endpoint")
+    checks += 1
+
+    # CellTag iEP temporal history in two biological replicates.
+    iep_snap = rows("results/celltag/iep_snapshot_recovery.csv")
+    iep_hist = rows("results/celltag/iep_history_recovery.csv")
+
+    def pick(table, replicate, modality, depth, representation, endpoint="fineDay21Fate"):
+        return next(
+            r for r in table
+            if r["replicate"] == replicate
+            and r["modality"] == modality
+            and r["packageDepth"] == str(depth)
+            and r["representation"] == representation
+            and r["endpoint"] == endpoint
+        )
+
+    r1_rna_snap5 = pick(iep_snap, "r1", "RNA", 5, "snapshotDay3")
+    r2_rna_snap5 = pick(iep_snap, "r2", "RNA", 5, "snapshotDay3")
+    r1_rna_hist5 = pick(iep_hist, "r1", "RNA", 5, "orderedHistory")
+    r2_rna_hist5 = pick(iep_hist, "r2", "RNA", 5, "orderedHistory")
+    require((int(r1_rna_snap5["majorityResidual"]), int(r2_rna_snap5["majorityResidual"]),
+             int(r1_rna_hist5["majorityResidual"]), int(r2_rna_hist5["majorityResidual"])) ==
+            (18, 10, 5, 0),
+            "CellTag iEP RNA snapshot/history residuals")
+    checks += 1
+    require(int(r2_rna_hist5["cloneCount"]) == 159 and int(r2_rna_hist5["partitionSize"]) == 159
+            and as_bool(r2_rna_hist5["recovers"]) and as_bool(r2_rna_hist5["stateInjective"]),
+            "CellTag iEP replicate-2 RNA fingerprint exactness")
+    checks += 1
+
+    r1_atac_hist5 = pick(iep_hist, "r1", "ATAC", 5, "orderedHistory")
+    r2_atac_hist5 = pick(iep_hist, "r2", "ATAC", 5, "orderedHistory")
+    require((int(r1_atac_hist5["cloneCount"]), int(r1_atac_hist5["partitionSize"]),
+             int(r2_atac_hist5["cloneCount"]), int(r2_atac_hist5["partitionSize"])) ==
+            (27, 27, 35, 35)
+            and as_bool(r1_atac_hist5["recovers"]) and as_bool(r2_atac_hist5["recovers"])
+            and as_bool(r1_atac_hist5["stateInjective"]) and as_bool(r2_atac_hist5["stateInjective"]),
+            "CellTag iEP ATAC fingerprint histories")
+    checks += 1
+
+    r1_multi_snap5 = pick(iep_snap, "r1", "MULTI", 5, "snapshotDay3")
+    r2_multi_snap5 = pick(iep_snap, "r2", "MULTI", 5, "snapshotDay3")
+    require((int(r1_multi_snap5["cloneCount"]), int(r1_multi_snap5["partitionSize"]),
+             int(r2_multi_snap5["cloneCount"]), int(r2_multi_snap5["partitionSize"])) ==
+            (17, 17, 24, 24)
+            and as_bool(r1_multi_snap5["recovers"]) and as_bool(r2_multi_snap5["recovers"])
+            and as_bool(r1_multi_snap5["stateInjective"]) and as_bool(r2_multi_snap5["stateInjective"]),
+            "CellTag iEP strict multimodal snapshot exactness")
+    checks += 1
+
     # Cross-replicate transport authority at deepest ordered history.
     transfer = rows("results/celltag/iep_cross_replicate_state_transfer.csv")
     deep = {
