@@ -60,7 +60,7 @@ Third-party raw datasets are not mirrored here by default. `data/source_manifest
 
 ## Citation and archival release
 
-`CITATION.cff` will identify the final manuscript release. A tagged release corresponding exactly to the public preprint will be archived with a DOI; that DOI will be added here and to the manuscript at release freeze.
+`CITATION.cff` identifies the manuscript release. The archival DOI assigned to this work is **10.5281/zenodo.22969066**. The DOI-backed release is the immutable computational companion to the preprint.
 
 ## Status
 
