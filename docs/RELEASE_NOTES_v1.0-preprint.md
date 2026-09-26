@@ -31,9 +31,6 @@ https://doi.org/10.5281/zenodo.22969066
 
 A PDF need not be duplicated in the repository release; Zenodo remains the manuscript source of record.
 
-## Release commit
-
-`7118f6b4d4a51a6774c5c644a3132c9b1b29866b`
 
 ## Licensing
 
