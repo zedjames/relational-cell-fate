@@ -1,17 +1,19 @@
 # Relational Cell Fate
 
-Reproducibility materials for **“Relational Anatomy of Cell Fate Across Lineage-Resolved Perturbation Experiments.”**
+Public reproducibility materials for **“Relational Anatomy of Cell Fate Across Lineage-Resolved Perturbation Experiments.”**
+
+**Manuscript DOI:** 10.5281/zenodo.22969066
 
 ## Purpose
 
-This repository is the public, paper-specific reproducibility record for the accompanying manuscript. It contains the finite data products, result tables, controls, figure inputs, validation scripts, provenance records, and release manifests needed to reproduce and inspect the reported empirical results.
+This repository is the paper-specific reproducibility record for the accompanying manuscript. It contains the finite result tables, controls, provenance records, numerical validation code, and figure-generation workflow needed to reproduce and inspect the reported empirical results.
 
-It is **not** a public release of the private research environment in which the work was developed, and it does not distribute the broader formal calculus, unrelated theorem libraries, research orchestration, or other private research programs.
+It is **not** a public release of the private research environment in which the work was developed. It does not distribute the broader formal calculus, unrelated theorem libraries, research orchestration, or other private research programs.
 
 The intended reproducibility direction is:
 
 ```
-public source data
+public source authority
         ↓
 paper-specific finite carriers / derived maps
         ↓
@@ -25,11 +27,11 @@ reported tables, statistics, and figures
 **Relational Anatomy of Cell Fate Across Lineage-Resolved Perturbation Experiments**  
 *A finite relational calculus for state, identity, history, and fate across biological systems*
 
-A frozen manuscript PDF and source will be added at the release freeze corresponding to the archival DOI.
+The published manuscript is archived at DOI **10.5281/zenodo.22969066**. The exact published PDF and manuscript source are included under `manuscript/`.
 
-## What this repository will let a reader reproduce
+## What this repository lets a reader reproduce
 
-The release is organized to reproduce or independently check the numerical results underlying:
+The released artifacts support reproduction or independent checking of the numerical results underlying:
 
 - ReSisTrace preterminal state / future-observation geometry;
 - Rewind positive-resistant fate fibers and permutation controls;
@@ -38,30 +40,50 @@ The release is organized to reproduce or independently check the numerical resul
 - CellTag-multi reprogramming temporal-history and cross-replicate authority analyses;
 - the cross-carrier identity–future synthesis, including the registered surface census and fate-selective surplus.
 
+A claim-to-artifact map is provided in `docs/RESULT_MAP.md`.
+
 ## Repository boundary
 
-This repository exposes only the material needed for this paper. It does **not** contain the private development repository, its tier architecture, generic research-generation machinery, or reusable implementation of the broader calculus.
+This repository exposes only the material needed to reproduce and inspect this paper. It does **not** contain the private development repository, its tier architecture, generic research-generation machinery, or reusable implementation of the broader calculus.
 
-Formal checking performed in the private research environment is reported as verification metadata in the release record. Public reproducibility is centered on the empirical computations and paper-specific validation artifacts.
+Formal checking performed in the private research environment is reported in the manuscript as part of the development and verification history. Public reproducibility here is centered on the empirical computations and paper-specific validation artifacts.
+
+## Quick start
+
+```bash
+make verify
+make setup
+make figures
+```
+
+- `make verify` checks the released manuscript-facing numerical results using only the Python standard library.
+- `make setup` installs the small plotting dependency set.
+- `make figures` regenerates the empirical figure assets from released result tables.
 
 ## Structure
 
 ```
 analysis/        paper-specific reproduction / validation code
-data/            source manifest and release-level derived inputs
-docs/            provenance, release boundary, and reproducibility guide
-manuscript/      frozen manuscript artifacts at release
-results/         frozen result tables and figure inputs
+data/            source manifest and source-authority metadata
+docs/            provenance, release boundary, result map, and release notes
+manuscript/      published manuscript PDF and source
+results/         frozen result tables and paper-facing derived summaries
 ```
 
 ## Source data
 
-Third-party raw datasets are not mirrored here by default. `data/source_manifest.tsv` records public accessions, publications, and source-code authority. The release will include deterministic acquisition / preprocessing instructions and paper-specific derived artifacts where redistribution is appropriate.
+Third-party raw datasets are not mirrored here by default. `data/source_manifest.tsv` records public accessions, publications, and source-code authority. `analysis/acquire_public_sources.py` provides deterministic public-source acquisition support for the datasets used in the manuscript.
 
-## Citation and archival release
+## Licensing
 
-`CITATION.cff` identifies the manuscript release. The archival DOI assigned to this work is **10.5281/zenodo.22969066**. Once the frozen release is published to that archival record, the DOI-backed snapshot is the immutable computational companion to the preprint.
+See `LICENSE.md`.
 
-## Status
+In summary:
 
-**Release preparation in progress.** The current repository is being populated from the frozen analysis authority used for the manuscript.
+- manuscript, figures, documentation, and original derived result tables: **CC BY-NC-ND 4.0**;
+- paper-specific executable scripts and build helpers: **PolyForm Noncommercial 1.0.0**;
+- third-party source data remain governed by their original licenses and terms.
+
+## Release status
+
+This repository is the public computational companion to the manuscript archived at DOI **10.5281/zenodo.22969066**. The release manifest and checksums identify the frozen paper-specific artifact state.
