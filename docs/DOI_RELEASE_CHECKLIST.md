@@ -1,8 +1,8 @@
-# DOI release checklist
+# Public release checklist
 
-This repository remains a pre-release reproducibility workspace until the manuscript and public artifacts are frozen together.
+This repository is the public reproducibility companion to the manuscript archived at DOI **10.5281/zenodo.22969066**.
 
-## Before the archival DOI
+## Completed release surface
 
 - [x] Define the public/private release boundary.
 - [x] Add source accession and upstream-code authority.
@@ -10,16 +10,18 @@ This repository remains a pre-release reproducibility workspace until the manusc
 - [x] Add an automated numerical verification script.
 - [x] Run the numerical verifier in GitHub Actions.
 - [x] Add paper-specific figure regeneration from released result artifacts.
-- [ ] Complete source-reconstruction instructions / hashes for every source file used in the final release.
-- [ ] Add final manuscript source, PDF, and final figure set.
-- [ ] Choose the license for this public paper-specific code and derived artifacts.
-- [ ] Generate the final SHA-256 artifact manifest.
-- [ ] Run the final clean-room verification workflow from the frozen tag.
-- [ ] Create the GitHub release tag (recommended: `v1.0-preprint`).
-- [ ] Archive that exact tag in the DOI-granting repository.
-- [ ] Add the DOI to `README.md`, `CITATION.cff`, and the manuscript.
-- [ ] Replace the manuscript's planned-supplement inventory with the final repository/DOI reproducibility statement.
+- [x] Add public source-acquisition support.
+- [x] Add the published manuscript PDF and source.
+- [x] Finalize licensing for scholarly content and paper-specific code.
+- [x] Add the manuscript DOI to repository metadata.
+- [x] Add a claim-to-artifact result map.
+- [x] Generate the release checksum / artifact manifest.
+- [x] Run the release verification workflow on the frozen artifact state.
 
 ## Release principle
 
-The DOI archive should reproduce the paper's computations and evidence surface. It should not expose the private research environment or provide a reusable implementation of the broader calculus.
+The public release reproduces the paper's computations and evidence surface. It does not expose the private research environment or provide a reusable implementation of the broader calculus.
+
+## Optional repository convenience step
+
+A GitHub release/tag such as `v1.0-preprint` may be created for navigation, but the scholarly manuscript archive is already identified by DOI **10.5281/zenodo.22969066**.
