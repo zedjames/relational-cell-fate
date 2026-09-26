@@ -11,17 +11,18 @@ This repository is the public reproducibility companion to the manuscript archiv
 - [x] Run the numerical verifier in GitHub Actions.
 - [x] Add paper-specific figure regeneration from released result artifacts.
 - [x] Add public source-acquisition support.
-- [x] Add the published manuscript PDF and source.
+- [x] Link the repository to the published manuscript DOI.
 - [x] Finalize licensing for scholarly content and paper-specific code.
-- [x] Add the manuscript DOI to repository metadata.
 - [x] Add a claim-to-artifact result map.
-- [x] Generate the release checksum / artifact manifest.
-- [x] Run the release verification workflow on the frozen artifact state.
+- [x] Add a release artifact manifest.
+- [x] Run the release verification workflow on the finalized public state.
 
 ## Release principle
 
 The public release reproduces the paper's computations and evidence surface. It does not expose the private research environment or provide a reusable implementation of the broader calculus.
 
-## Optional repository convenience step
+The manuscript itself is archived on Zenodo. The GitHub repository is its computational reproducibility companion.
 
-A GitHub release/tag such as `v1.0-preprint` may be created for navigation, but the scholarly manuscript archive is already identified by DOI **10.5281/zenodo.22969066**.
+## Optional convenience step
+
+A GitHub release/tag such as `v1.0-preprint` may be created for navigation, but it is not required for the scientific release architecture because the manuscript already has a stable DOI and the repository is linked directly from the paper.
