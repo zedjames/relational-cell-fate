@@ -6,9 +6,8 @@ authors:
   - family-names: James
     given-names: Zed
 repository-code: "https://github.com/zedjames/relational-cell-fate"
-license: "NOASSERTION"
-version: "0.9"
+license: "CC-BY-NC-ND-4.0"
+version: "1.0"
 date-released: "2026-09-25"
-abstract: "Paper-specific reproducibility materials for lineage-resolved state-fate analyses across cancer resistance, hematopoiesis, and cellular reprogramming."
-
 doi: "10.5281/zenodo.22969066"
+abstract: "Paper-specific reproducibility materials for lineage-resolved state-fate analyses across cancer resistance, hematopoiesis, and cellular reprogramming."
